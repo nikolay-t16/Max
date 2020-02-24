@@ -1,0 +1,39 @@
+.ms-index-exp {
+    border-radius: 4px;
+    padding: 15px 15px 15px 110px;
+    background-repeat: no-repeat;
+    background-position: 15px 15px;
+    width: 32%;
+    margin: 0 1% 30px 0;
+    display: inline-block;
+    vertical-align: top;
+    @media (max-width: 992px) {
+        width: 100%;
+        background-size: 60px;
+        background-position: 0 12px;
+        padding: 7px 15px 5px 85px;
+    }
+}
+
+.ms-index-exp-h1 {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.ms-index-exp a {
+    display: block;
+    padding-bottom: 10px;
+}
+.doccuments-index {
+    padding: 80px 0 80px;
+    display: flex;
+
+    &__index-img {
+        background: url(http://kubexp.ru/img/bg_frame_small.png) no-repeat center center;
+        width: 195px;
+        height: 248px;
+        padding: 26px;
+        margin-right: 50px;
+    }
+}
