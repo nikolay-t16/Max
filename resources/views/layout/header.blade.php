@@ -28,21 +28,9 @@ use App\Model\Page;
         <div class="menu hidden-md-and-down">
             @foreach( $menu[NULL] as $menuItem)
             <div class="menu__item">
-                <ul itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
-                    <a class="menu__link" itemprop="url" href="">{{$menuItem->title}}</a>
-                    @if(isset($menu[$menuItem->id]))
-                    <div class="menu__sub-menu">
-                        @foreach( $menu[$menuItem->id] as $subMenuItem)
-                        <? /* @var $subMenuItem Page */ ?>
-                        <li itemprop="name">
-                            <a class="menu__sub-menu-item" itemprop="url" href="{{$subMenuItem->slug}}">
-                                {{$subMenuItem->title}}
-                            </a>
-                        </li>
-                        @endforeach
-                    </div>
-                    @endif
-                </ul>
+                <a class="menu__link" itemprop="url" href="/{{$menuItem->id !== 1 ? $menuItem->slug : ''}}">
+                    {{$menuItem->title}}
+                </a>
             </div>
             @endforeach
         </div>

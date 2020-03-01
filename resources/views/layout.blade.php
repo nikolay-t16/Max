@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
 </head>
 <body class="page">
-<div class="page-wrapper">
-    @include('layout/header')
-    @yield('baner')
-    <div class="container">
-        @yield('content')
+    <div class="page-wrapper">
+        @include('layout/header')
+        @yield('baner')
+        <div class="content">
+            @yield('content')
+        </div>
+        @include('layout/footer')
     </div>
-    @include('layout/footer')
-</div>
 <script src="{{ elixir('js/app.js') }}"></script>
 </body>
 </html>

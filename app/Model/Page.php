@@ -3,6 +3,7 @@
 
 namespace App\Model;
 
+use App\Model\TCG\ExpertiseType;
 use EloquentTypeHinting;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -25,8 +26,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string created_at
  * @property string updated_at
  * @property int parent_id
- * @property int expertize_type_id
- * @property BelongsTo expertize_type
+ * @property int expertise_type_id
+ * @property BelongsTo expertise
  * @property BelongsTo parent
  *
  */
@@ -47,26 +48,26 @@ class Page extends Model
     const FIELD_STATUS = 'status';
     const FIELD_UPDATED_AT = 'updated_at';
     const FIELD_PARENT_ID = 'parent_id';
-    const FIELD_EXPERTIZE_ID = 'expertize_type_id';
-    const SLUG_EXPERTIZE_PAGE = 'expertize';
+    const FIELD_EXPERTISE_TYPE_ID = 'expertise_type_id';
+    const SLUG_EXPERTISE_PAGE = 'expertise';
     const SLUG_ABOUT_PAGE = 'about';
     const SLUG_DOCCUMENTS_PAGE = 'doccuments';
-    protected static $expertizePageId = null;
+    protected static $expertisePageId = null;
 
     /**
      * @return BelongsTo
      */
     public function parent()
     {
-        return $this->$this->belongsTo('App\Model\Page');
+        return $this->belongsTo('App\Model\Page');
     }
 
     /**
      * @return BelongsTo
      */
-    public function expertize()
+    public function expertise()
     {
-        return $this->$this->belongsTo('App\Model\TCG\ExpertizeType');
+        return $this->belongsTo('App\Model\TCG\ExpertiseType', self::FIELD_EXPERTISE_TYPE_ID);
     }
 
     /**
@@ -85,27 +86,24 @@ class Page extends Model
         return $res;
     }
 
-    public static function getExpertizePageId(): int
+    public static function getExpertisePageId(): int
     {
-        if (!self::$expertizePageId) {
-            self::$expertizePageId = self::where(self::FIELD_SLUG, self::SLUG_EXPERTIZE_PAGE)->first()->id;
+        if (!self::$expertisePageId) {
+            self::$expertisePageId = self::where(self::FIELD_SLUG, self::SLUG_EXPERTISE_PAGE)->first()->id;
         }
-        return self::$expertizePageId;
+        return self::$expertisePageId;
     }
 
-    public static function getItemsGroupByExpertize(): array {
+    public static function getItemsGroupByExpertise(): array {
         $result = [];
         $pages = Page::query()
-            ->where(Page::FIELD_PARENT_ID, Page::getExpertizePageId())
+            ->where(Page::FIELD_PARENT_ID, Page::getExpertisePageId())
             ->orderBy(self::FIELD_SORT)
             ->get();
         foreach ($pages as $page) {
             /* @var $page Page */
-            $result[$page->expertize_type_id][] = $page;
+            $result[$page->expertise_type_id][] = $page;
         }
         return $result;
     }
 }
-
-
-

@@ -1,13 +1,10 @@
+<?php  /* @var $page \App\Model\Page */ ?>
 @extends('../layout')
 @section('content')
     <div class="container">
         @include('../blocks/index/expertises')
-        @include('../blocks/index/doccuments')
         <div>
-            @include('../blocks/index/about')
+            {!! $page->body !!}
         </div>
     </div>
-@endsection
-@section('baner')
-    @include('../blocks/index/banner')
 @endsection

@@ -16,23 +16,23 @@ use EloquentTypeHinting;
  * @property string name
  *
  */
-class ExpertizeType extends Model
+class ExpertiseType extends Model
 {
-    const TABLE_NAME = 'expertize_types';
+    const TABLE_NAME = 'expertise_types';
     const FIELD_ID = 'id';
     const FIELD_NAME = 'name';
     const FIELD_IMAGE = 'image';
     const FIELD_SORT = 'sort';
 
-    public static function getExpertizeWithItems() {
+    public static function getExpertiseWithItems() {
         return self::query()
             ->whereIn(
                 'id',
                 function ($query) {
-                    $query->select(Page::FIELD_EXPERTIZE_ID)
+                    $query->select(Page::FIELD_EXPERTISE_TYPE_ID)
                         ->distinct()
                         ->from(Page::TABLE_NAME)
-                        ->where(Page::FIELD_EXPERTIZE_ID, '>' ,0);
+                        ->where(Page::FIELD_EXPERTISE_TYPE_ID, '>' ,0);
                     return $query;
                 }
             )
