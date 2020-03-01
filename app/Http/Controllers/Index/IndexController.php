@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers\index;
+namespace App\Http\Controllers\Index;
 
 
 use App\Http\Controllers\Controller;
@@ -18,9 +18,9 @@ class IndexController extends Controller
         $expertise = ExpertiseType::getExpertiseWithItems();
         $expertiseItems = Page::getItemsGroupByExpertise();
         $about = Page::where(Page::FIELD_SLUG, Page::SLUG_ABOUT_PAGE)->first();
-        $doccumentsPage = Page::where(Page::FIELD_SLUG, Page::SLUG_DOCCUMENTS_PAGE)->first();
+        $documentsPage = Page::where(Page::FIELD_SLUG, Page::SLUG_DOCUMENTS_PAGE)->first();
         $data = [
-            'doccumentsPage' => $doccumentsPage,
+            'documentsPage' => $documentsPage,
             'about' => $about,
             'expertise' => $expertise,
             'expertiseTitle' => 'Популярные экспертизы',

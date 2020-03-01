@@ -50,8 +50,9 @@ class Page extends Model
     const FIELD_PARENT_ID = 'parent_id';
     const FIELD_EXPERTISE_TYPE_ID = 'expertise_type_id';
     const SLUG_EXPERTISE_PAGE = 'expertise';
+    const SLUG_SERVICE_PAGE = 'service';
     const SLUG_ABOUT_PAGE = 'about';
-    const SLUG_DOCCUMENTS_PAGE = 'doccuments';
+    const SLUG_DOCUMENTS_PAGE = 'documents';
     protected static $expertisePageId = null;
 
     /**

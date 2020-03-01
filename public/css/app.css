@@ -12008,12 +12008,12 @@ input::-webkit-search-results-decoration {
   padding-bottom: 10px;
 }
 
-.doccuments-index {
+.documents-index {
   padding: 80px 0 80px;
   display: flex;
 }
 
-.doccuments-index__index-img {
+.documents-index__index-img {
   background: url(http://kubexp.ru/img/bg_frame_small.png) no-repeat center center;
   width: 195px;
   height: 248px;

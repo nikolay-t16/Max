@@ -9,10 +9,12 @@ use \App\Model\Page;
             <? /* @var $expertiseItem ExpertiseType */ ?>
                 <div class="ms-index-exp" style="background-image:url(http://kubexp.ru/gallery/3030c3.svg)">
                     <div class="ms-index-exp-h1">{{$expertiseItem->name}}</div>
-                    @foreach ($expertiseItems[$expertiseItem->id] as $item)
-                        <? /* @var $item Page */ ?>
-                        <a href="/expertise/{{$item->slug}}">{{$item->title}}</a>
-                    @endforeach
+                    @if(isset($expertiseItems[$expertiseItem->id]) && count($expertiseItems[$expertiseItem->id]))
+                        @foreach ($expertiseItems[$expertiseItem->id] as $item)
+                            <? /* @var $item Page */ ?>
+                            <a href="/expertise/{{$item->slug}}">{{$item->title}}</a>
+                        @endforeach
+                    @endif
                 </div>
         @endforeach
         @if (!isset($hideAllExpertiseBtn))

@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         @include('../blocks/index/expertises')
-        @include('../blocks/index/doccuments')
+        @include('../blocks/index/documents')
         <div>
             @include('../blocks/index/about')
         </div>
