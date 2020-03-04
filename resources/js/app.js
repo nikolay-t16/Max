@@ -1,4 +1,8 @@
 require('./bootstrap');
+import '@fancyapps/fancybox/dist/jquery.fancybox.min';
+import '@fancyapps/fancybox/dist/jquery.fancybox.min.css';
+
+$('.fancybox').fancybox({});
 const swiper = require('swiper/js/swiper.min');
 const mySwiper = new swiper(
     '.swiper-wrapper',
@@ -20,4 +24,3 @@ const mySwiper = new swiper(
         }
     }
 );
-console.log('123');

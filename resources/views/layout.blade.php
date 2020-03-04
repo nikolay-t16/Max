@@ -14,6 +14,7 @@
         </div>
         @include('layout/footer')
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="{{ elixir('js/app.js') }}"></script>
 </body>
 </html>

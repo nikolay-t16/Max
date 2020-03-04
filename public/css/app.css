@@ -12021,3 +12021,52 @@ input::-webkit-search-results-decoration {
   margin-right: 50px;
 }
 
+.ms-docs-one {
+  display: inline-block;
+  width: 33%;
+  padding: 0 20px 50px 0;
+  vertical-align: top;
+}
+
+.ms-docs-one-v {
+  width: 326px;
+  height: 432px;
+  background: url(http://kubexp.ru/img/bg_doc_v.png) no-repeat top left;
+  position: relative;
+  cursor: pointer;
+}
+
+.ms-docs-one-h {
+  width: 325px;
+  height: 253px;
+  background: url(http://kubexp.ru/img/bg_doc_v.png) no-repeat top left;
+  position: relative;
+  cursor: pointer;
+}
+
+.ms-docs-one-h .ms-docs-zoom,
+.ms-docs-one-v .ms-docs-zoom {
+  position: absolute;
+  background: url(http://kubexp.ru/svg/ico_zoom.svg) no-repeat center center;
+  background-size: 60px;
+  top: 85px;
+  left: 130px;
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+  display: none;
+}
+
+.ms-docs-canvas {
+  width: 234px;
+  height: 342px;
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+  z-index: 1;
+  overflow: hidden;
+}
+

@@ -12,16 +12,8 @@ class PageController extends Controller
 {
     public function __invoke($url)
     {
-        $page = Page::where(Page::FIELD_SLUG, $url);
-        $expertise = ExpertiseType::getExpertiseWithItems();
-        $expertiseItems = Page::getItemsGroupByExpertise();
-
-        $data = [
-            'page' => $page,
-            'expertise' => $expertise,
-            'expertiseItems' => $expertiseItems,
-            'hideAllExpertiseBtn' => true,
-        ];
-        return view('/page/pages-layout/expertise', $data);
+        $page = Page::where(Page::FIELD_SLUG, $url)->first();
+        $data = ['page' => $page];
+        return view('/page/content', $data);
     }
 }
