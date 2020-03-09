@@ -53,6 +53,7 @@ class Page extends Model
     const SLUG_SERVICE_PAGE = 'service';
     const SLUG_ABOUT_PAGE = 'about';
     const SLUG_DOCUMENTS_PAGE = 'documents';
+    const SLUG_CONTACTS_PAGE = 'contacts';
     protected static $expertisePageId = null;
 
     /**

@@ -10438,8 +10438,8 @@ body.loaded .page-overlay {
 }
 
 .input-container input {
-  padding: 15px 22px 0;
-  height: 56px;
+  padding: 0 22px 0;
+  height: 36px;
 }
 
 .input-container select {
@@ -11855,7 +11855,7 @@ input::-webkit-search-results-decoration {
   max-width: 1170px;
   margin: 0 auto;
   display: block;
-  z-index: 99999;
+  z-index: 9999;
   padding: 0 72px;
   width: 100%;
   text-align: right;

@@ -2,25 +2,18 @@ require('./bootstrap');
 import '@fancyapps/fancybox/dist/jquery.fancybox.min';
 import '@fancyapps/fancybox/dist/jquery.fancybox.min.css';
 
+const callcpicDefault = 'https://oooeos.ru/img/circle.png';
+const callcpicMouseOver = 'https://oooeos.ru/img/wholecircle.png';
+const callcpic = $('#callpic');
+callcpic.mouseover(()=> callcpic.attr('src', callcpicMouseOver));
+callcpic.mouseout(()=> callcpic.attr('src', callcpicDefault));
 $('.fancybox').fancybox({});
+$('#callpic_a').fancybox({});
 const swiper = require('swiper/js/swiper.min');
-const mySwiper = new swiper(
-    '.swiper-wrapper',
-    {
-        direction: 'horizontal',
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-            clickable: true,
-        },
-        effect: 'fade',
-        loop: true,
-        speed: 1e3,
-        autoHeight: true,
-        simulateTouch: false,
-        autoplay: {
-            delay: 1000,
-            disableOnInteraction: false,
-        }
-    }
-);
+var mySwiper = new swiper('.swiper-container', {
+    speed: 400,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});

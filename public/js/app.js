@@ -19983,25 +19983,25 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
+var callcpicDefault = 'https://oooeos.ru/img/circle.png';
+var callcpicMouseOver = 'https://oooeos.ru/img/wholecircle.png';
+var callcpic = $('#callpic');
+callcpic.mouseover(function () {
+  return callcpic.attr('src', callcpicMouseOver);
+});
+callcpic.mouseout(function () {
+  return callcpic.attr('src', callcpicDefault);
+});
 $('.fancybox').fancybox({});
+$('#callpic_a').fancybox({});
 
 var swiper = __webpack_require__(/*! swiper/js/swiper.min */ "./node_modules/swiper/js/swiper.min.js");
 
-var mySwiper = new swiper('.swiper-wrapper', {
-  direction: 'horizontal',
+var mySwiper = new swiper('.swiper-container', {
+  speed: 400,
   pagination: {
     el: '.swiper-pagination',
-    type: 'bullets',
     clickable: true
-  },
-  effect: 'fade',
-  loop: true,
-  speed: 1e3,
-  autoHeight: true,
-  simulateTouch: false,
-  autoplay: {
-    delay: 1000,
-    disableOnInteraction: false
   }
 });
 
