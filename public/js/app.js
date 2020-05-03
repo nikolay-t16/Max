@@ -19994,6 +19994,12 @@ callcpic.mouseout(function () {
 });
 $('.fancybox').fancybox({});
 $('#callpic_a').fancybox({});
+$('.loginformbutton').fancybox({});
+var regpopupbutton = $('.regpopupbutton');
+regpopupbutton.click(function () {
+  return $.fancybox.close();
+});
+regpopupbutton.fancybox({});
 
 var swiper = __webpack_require__(/*! swiper/js/swiper.min */ "./node_modules/swiper/js/swiper.min.js");
 

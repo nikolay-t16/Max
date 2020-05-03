@@ -9,6 +9,10 @@ callcpic.mouseover(()=> callcpic.attr('src', callcpicMouseOver));
 callcpic.mouseout(()=> callcpic.attr('src', callcpicDefault));
 $('.fancybox').fancybox({});
 $('#callpic_a').fancybox({});
+$('.loginformbutton').fancybox({});
+const regpopupbutton = $('.regpopupbutton');
+regpopupbutton.click(() => $.fancybox.close());
+regpopupbutton.fancybox({});
 const swiper = require('swiper/js/swiper.min');
 var mySwiper = new swiper('.swiper-container', {
     speed: 400,

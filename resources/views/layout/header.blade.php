@@ -47,7 +47,7 @@ use App\Model\Page;
            style="margin-right: 8px; width: 54px;"></a>
         <a class="button hidden-md-and-up button_size_mobile button_type_user button_type_pay"
            href="//oooeos.ru/payment/oplatit-online/"></a>
-        <a class="button button_theme_red hidden-md-and-down" href="//lk.oooeos.ru/">
+        <a class="button button_theme_red hidden-md-and-down loginformbutton" href="#loginform">
             <span class="button__text">Личный кабинет</span>
         </a>
         <a class="button button_size_mobile button_theme_red button_type_user hidden-lg-and-up"
