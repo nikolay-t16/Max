@@ -20011,6 +20011,48 @@ var mySwiper = new swiper('.swiper-container', {
   }
 });
 
+function isEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+
+var sendregform = $('.reg_submit_button');
+var regform = $('.user-reg_form');
+regform.on('submit', function (e) {
+  e.preventDefault();
+  var regemail = $('#reg_email').val();
+  var regpass = $('#reg_password').val();
+  var regpassconf = $('#reg_password_confirmation').val();
+  console.log(regemail);
+  console.log(regpass);
+  console.log(regpassconf);
+
+  if (!isEmail(regemail)) {
+    console.log('validation: wrong email!');
+    return false;
+  }
+
+  if (regpass !== regpassconf) {
+    console.log('validation: password not confirmed');
+    return false;
+  }
+
+  console.log('validation: success');
+  $.get("/register", {
+    reg_email: regemail,
+    reg_password: regpass,
+    reg_password_confirmation: regpassconf
+  }, function (data) {
+    var data_ob = JSON.parse(data);
+    console.log(data_ob.errors.length);
+
+    if (data_ob.errors.email.length > 0 || data_ob.errors.password.length > 0) {
+      console.log(data_ob.errors);
+    }
+  });
+  return false;
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -20063,8 +20105,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\OpenServer5.3\OSPanel\domains\voyager\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\OpenServer5.3\OSPanel\domains\voyager\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! H:\Server\OSPanel\domains\Max\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! H:\Server\OSPanel\domains\Max\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

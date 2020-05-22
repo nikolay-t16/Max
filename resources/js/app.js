@@ -21,3 +21,45 @@ var mySwiper = new swiper('.swiper-container', {
         clickable: true,
     },
 });
+
+function isEmail(email) {
+    const regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+}
+
+const sendregform = $('.reg_submit_button');
+const regform = $('.user-reg_form');
+regform.on('submit',function(e){
+    e.preventDefault();
+    const regemail = $('#reg_email').val();
+    const regpass = $('#reg_password').val();
+    const regpassconf = $('#reg_password_confirmation').val();
+    console.log(regemail);
+    console.log(regpass);
+    console.log(regpassconf);
+    if(!isEmail(regemail)){
+        console.log('validation: wrong email!');
+        return false;
+    }
+    if(regpass !== regpassconf){
+        console.log('validation: password not confirmed');
+        return false
+    }
+    console.log('validation: success');
+    $.get(
+        "/register",
+        {
+            reg_email: regemail,
+            reg_password: regpass,
+            reg_password_confirmation: regpassconf,
+        },
+        function(data){
+            var data_ob = JSON.parse(data);
+            console.log(data_ob.errors.length);
+            if(data_ob.errors.email.length > 0 || data_ob.errors.password.length > 0 ){
+                console.log(data_ob.errors);
+            }
+        },
+    );
+    return false;
+});

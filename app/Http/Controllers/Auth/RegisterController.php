@@ -50,9 +50,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            //'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'min:6', 'confirmed'],
         ]);
     }
 
@@ -64,10 +64,28 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $check_data['email'] = $data['reg_email'];
+        $check_data['password'] = $data['reg_password'];
+        $check_data['password_confirmation'] = $data['reg_password_confirmation'];
+        $validator = $this->validator($check_data);
+
+        if ($validator->fails()){
+            $message['errors'] = $validator->errors();
+            print_r(json_encode($message));
+            return $validator->errors();
+        }
+
+        return User::create(
+            [
+                'name' => $data['reg_email'],
+                'email' => $data['reg_email'],
+                'password' => Hash::make($data['reg_password']),
+            ]
+        );
+    }
+
+    public function __invoke()
+    {
+        $this->create($_REQUEST);
     }
 }
