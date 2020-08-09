@@ -28,9 +28,10 @@ function isEmail(email) {
 }
 
 const sendregform = $('.reg_submit_button');
-const regform = $('.user-reg_form');
+const regform = $('#user-reg_form');
 regform.on('submit',function(e){
     e.preventDefault();
+    const token = $('#reg_token').val();
     const regemail = $('#reg_email').val();
     const regpass = $('#reg_password').val();
     const regpassconf = $('#reg_password_confirmation').val();
@@ -46,9 +47,10 @@ regform.on('submit',function(e){
         return false
     }
     console.log('validation: success');
-    $.get(
+    $.post(
         "/register",
         {
+            _token: token,
             reg_email: regemail,
             reg_password: regpass,
             reg_password_confirmation: regpassconf,

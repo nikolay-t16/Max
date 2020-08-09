@@ -353,7 +353,7 @@ template {
 @font-face {
   font-family: "Montserrat";
   src: url(/fonts/Montserrat-Regular.eot?d6f22152d8540728c0822190369a51b4);
-  src: local("\263A"), url(/fonts/Montserrat-Regular.woff?cc8b54227f64a94a4ba57df5072fe2e3) format("woff"), url(/fonts/Montserrat-Regular.ttf?a8a117360e71de94ae3b0b0f8d15b44d) format("truetype"), url(/fonts/Montserrat-Regular.svg?e96e76743c2023cb90abfa5b31fba4b0) format("svg");
+  src: local("\263A"), url(/fonts/Montserrat-Regular.woff?cc8b54227f64a94a4ba57df5072fe2e3) format("woff"), url(/fonts/Montserrat-Regular.ttf?a8a117360e71de94ae3b0b0f8d15b44d) format("truetype"), url(/fonts/Montserrat-Regular.svg?4e360275050356c10cd59e45205824ba) format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -361,7 +361,7 @@ template {
 @font-face {
   font-family: "Montserrat";
   src: url(/fonts/Montserrat-Bold.eot?4f7f88756f0cc15b3056fd4f0b747e8d);
-  src: local("\263A"), url(/fonts/Montserrat-Bold.woff?dda8fc164a6a04a69538d3287a3d05e7) format("woff"), url(/fonts/Montserrat-Bold.ttf?534aa45a1095f2ae90182548a50dd142) format("truetype"), url(/fonts/Montserrat-Bold.svg?ccd48df5f633c8e0effe37d05a0fc8b7) format("svg");
+  src: local("\263A"), url(/fonts/Montserrat-Bold.woff?dda8fc164a6a04a69538d3287a3d05e7) format("woff"), url(/fonts/Montserrat-Bold.ttf?534aa45a1095f2ae90182548a50dd142) format("truetype"), url(/fonts/Montserrat-Bold.svg?64c309630072b1345e612e0ef79e6db2) format("svg");
   font-weight: bold;
   font-style: normal;
 }

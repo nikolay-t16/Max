@@ -3,7 +3,8 @@
     <div id="forForm">
         <div id="formessage"></div>
         <div class="auth-block-lk__form">
-            <form class="form-lkk user-reg_form" method="POST" id="regpopup-form" name="reg-form" action="/register">
+            <form class="form-lkk" method="POST" id="user-reg_form" name="reg-form" action="/register">
+                <input type="hidden" id="reg_token" name="_token" value="{{ csrf_token() }}">
                 <div id="stepOne">
                     <div class="form-lk__input">
                         <div class="input-container input-container_size_md">

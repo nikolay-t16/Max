@@ -20017,9 +20017,10 @@ function isEmail(email) {
 }
 
 var sendregform = $('.reg_submit_button');
-var regform = $('.user-reg_form');
+var regform = $('#user-reg_form');
 regform.on('submit', function (e) {
   e.preventDefault();
+  var token = $('#reg_token').val();
   var regemail = $('#reg_email').val();
   var regpass = $('#reg_password').val();
   var regpassconf = $('#reg_password_confirmation').val();
@@ -20038,7 +20039,8 @@ regform.on('submit', function (e) {
   }
 
   console.log('validation: success');
-  $.get("/register", {
+  $.post("/register", {
+    _token: token,
     reg_email: regemail,
     reg_password: regpass,
     reg_password_confirmation: regpassconf
@@ -20105,8 +20107,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! H:\Server\OSPanel\domains\Max\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! H:\Server\OSPanel\domains\Max\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\OpenServer5.3\OSPanel\domains\voyager\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\OpenServer5.3\OSPanel\domains\voyager\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
