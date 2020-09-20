@@ -9,7 +9,7 @@ Route::get('/service/{service}', 'Service\ServiceItemController');
 Route::get('/service', 'Service\ServiceController');
 Route::get('/contacts', 'Contacts\ContactsController');
 Route::post('/register', 'Auth\RegisterController');
-Route::get('/register', 'Auth\RegisterController');
+Route::post('/login', 'Auth\LoginController');
 
 
 Route::group(['prefix' => 'admin'], function () {

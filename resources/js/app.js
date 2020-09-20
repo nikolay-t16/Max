@@ -65,3 +65,31 @@ regform.on('submit',function(e){
     );
     return false;
 });
+const loginform = $('#login-form');
+loginform.on('submit',function(e){
+    e.preventDefault();
+    const token = $('#login_token').val();
+    const email = $('#login_email').val();
+    const pass = $('#login_password').val();
+
+    if(!isEmail(email)){
+        console.log('validation: wrong email!');
+        return false;
+    }
+    $.post(
+        "/login",
+        {
+            _token: token,
+            email,
+            password: pass,
+        },
+        function(data){
+            if(data.errors && (data.errors.email || data.errors.password)){
+                console.log(data.errors);
+                return;
+            }
+            document.location.href = '/lk';
+        },
+    );
+    return false;
+});

@@ -20054,6 +20054,32 @@ regform.on('submit', function (e) {
   });
   return false;
 });
+var loginform = $('#login-form');
+loginform.on('submit', function (e) {
+  e.preventDefault();
+  var token = $('#login_token').val();
+  var email = $('#login_email').val();
+  var pass = $('#login_password').val();
+
+  if (!isEmail(email)) {
+    console.log('validation: wrong email!');
+    return false;
+  }
+
+  $.post("/login", {
+    _token: token,
+    email: email,
+    password: pass
+  }, function (data) {
+    if (data.errors && (data.errors.email || data.errors.password)) {
+      console.log(data.errors);
+      return;
+    }
+
+    document.location.href = '/lk';
+  });
+  return false;
+});
 
 /***/ }),
 

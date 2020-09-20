@@ -3,7 +3,8 @@
     <div id="forForm">
         <div id="formessage"></div>
         <div class="auth-block-lk__form">
-            <form class="form-lkk" method="POST" id="zelo-form">
+            <form class="form-lkk" method="POST" id="login-form">
+                <input type="hidden" id="login_token" name="_token" value="{{ csrf_token() }}">
                 <div id="stepOne">
                     <div class="form-lk__input">
                         <div class="input-container input-container_size_md">
